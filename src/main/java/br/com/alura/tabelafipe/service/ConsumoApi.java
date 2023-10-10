@@ -36,7 +36,6 @@ public class ConsumoApi {
 
     public String obterDados(String endereco) {
 
-
         HostConfiguration config = client.getHostConfiguration();
         config.setProxy(proxyHost,port);
 
