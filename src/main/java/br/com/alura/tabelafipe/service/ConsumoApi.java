@@ -23,16 +23,18 @@ public class ConsumoApi {
     @Value("${proxy.pass}")
     String pass;
 
+    @Value("${proxy.host}")
+    String proxyHost;
+    @Value("${proxy.port}")
+    int port;
+
+
     public ConsumoApi() {
 
 
         }
 
     public String obterDados(String endereco) {
-
-
-        String proxyHost = "172.19.100.75";
-        int port = 8081;
 
 
         HostConfiguration config = client.getHostConfiguration();
@@ -49,8 +51,6 @@ public class ConsumoApi {
         method.setRequestHeader("User-Agent","PostmanRuntime/7.28.4");
         method.setRequestHeader("Connection","keep-alive");
         method.setRequestHeader("Cache-Control","no-cache");
-
-
         String response = null;
 
         try {
